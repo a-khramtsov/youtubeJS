@@ -155,8 +155,7 @@ document.addEventListener('DOMContentLoaded', () => { //Working after loading al
 
      //youtube API
      {
-         const API_KEY = 'AIzaSyBKy16ms61TM-3TDR8__iSYEwKcwGrSzEU';
-         const CLIENT_ID = '364729478546-rh8auatgl0s0d0cegm5h8umd5g2ubak2.apps.googleusercontent.com';
+         
      }
 
 
