@@ -148,7 +148,7 @@ export default function ytAPI() {
                         part: 'snippet',
                         channelId: item.dataset.youtuber,
                         order: 'date',
-                        maxResults: 12,
+                        maxResults: 24,
                     });
                 });
             });
@@ -162,7 +162,7 @@ export default function ytAPI() {
                 part: 'snippet',
                 channelId: 'UC0C-w0YjGpqDXGB8IHb662A',
                 order: 'date',
-                maxResults: 12,
+                maxResults: 24,
             });
         });
 
@@ -173,7 +173,7 @@ export default function ytAPI() {
                 method: 'videos',
                 part: 'snippet',
                 chart: 'mostPopular',
-                maxResults: 12,
+                maxResults: 24,
                 regionCode: 'US',
 
             });
@@ -185,7 +185,7 @@ export default function ytAPI() {
                 method: 'playlistItems',
                 part: 'snippet',
                 playlistId: 'LL_VtimcBd8pAWrmsclIvpvQ',
-                maxResults: 12,
+                maxResults: 24,
 
 
             });
@@ -197,7 +197,7 @@ export default function ytAPI() {
                 method: 'subscriptions',
                 part: 'snippet',
                 mine: 'true',
-                maxResults: 12,
+                maxResults: 24,
 
 
             });
@@ -216,7 +216,7 @@ export default function ytAPI() {
                 method: 'search',
                 part: 'snippet',
                 order: 'relevance',
-                maxResults: 8,
+                maxResults: 24,
                 q: valueInput,
             });
             searchForm.elements[0].value = '';
