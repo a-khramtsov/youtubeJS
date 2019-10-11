@@ -108,8 +108,7 @@ export default function ytAPI() {
 
             const ytWrapper = document.querySelector('#yt-wrapper');
             ytWrapper.textContent = '';
-            data.forEach(item => {
-                console.log('sub');
+            data.forEach(item => {              
                 try {
                     const {
                         snippet: {
