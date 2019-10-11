@@ -15,7 +15,7 @@ export default function ytAPI() {
             gapi.auth2.init({
                 client_id: CLIENT_ID
             });
-        });
+        }); 
 
         const authenticate = () => {
             return gapi.auth2.getAuthInstance()
@@ -44,8 +44,6 @@ export default function ytAPI() {
         buttonAuth.addEventListener('click', () => {
             authenticate().then(loadClient);
         });
-
-
     }
 
     //request
@@ -186,8 +184,6 @@ export default function ytAPI() {
                 part: 'snippet',
                 playlistId: 'LL_VtimcBd8pAWrmsclIvpvQ',
                 maxResults: 24,
-
-
             });
         });
 
@@ -198,8 +194,6 @@ export default function ytAPI() {
                 part: 'snippet',
                 mine: 'true',
                 maxResults: 24,
-
-
             });
         });
 
@@ -208,7 +202,6 @@ export default function ytAPI() {
             const valueInput = searchForm.elements[0].value;
             if (!valueInput) {
                 searchForm.style.border = '1px solid red';
-
                 return;
             }
             searchForm.style.border = '';
