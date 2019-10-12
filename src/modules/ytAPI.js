@@ -2,6 +2,7 @@ import youtuber from '../modules/youtuber';
 export default function ytAPI() {
     const API_KEY = 'AIzaSyDtd0XrsYM4si_Hcy7mU1tHg5fjimCab-E';
     const CLIENT_ID = '469696203160-742nuvvdc2gf741o72bftrcj01uebj31.apps.googleusercontent.com';
+    // function request();
     //Authorization(from https://developers.google.com/youtube/v3/docs/channels/list?apix=true)
     {
         const buttonAuth = document.querySelector('#authorize');
@@ -36,6 +37,13 @@ export default function ytAPI() {
                 })
                 .then(() => {
                     authBlock.style.display = 'none';
+                    // request({
+                    //     method: 'search',
+                    //     part: 'snippet',
+                    //     channelId: 'UCBR8-60-B28hp2BmDPdntcQ',
+                    //     order: 'date',
+                    //     maxResults: 24,
+                    // });
                 })
                 .catch(errorAuth);
         }
@@ -160,7 +168,7 @@ export default function ytAPI() {
         };
 
         //Function for showing chosen channel(my) videos official YT -UCBR8-60-B28hp2BmDPdntcQ
-        function myPage() {            
+        function mainPage() {            
             request({
                 method: 'search',
                 part: 'snippet',
@@ -181,8 +189,8 @@ export default function ytAPI() {
 
         
         //Youtube music chnnel  when you press main or yt-logo
-        main.addEventListener('click', myPage);
-        logo.addEventListener('click', myPage);
+        main.addEventListener('click', mainPage);
+        logo.addEventListener('click', mainPage);
 
 
         //Opening chosen yt channel UC0C-w0YjGpqDXGB8IHb662A - Ed Sheran
