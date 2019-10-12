@@ -1,8 +1,9 @@
 import youtuber from '../modules/youtuber';
 export default function ytAPI() {
-    
+    const API_KEY = 'AIzaSyDtd0XrsYM4si_Hcy7mU1tHg5fjimCab-E';
+    const CLIENT_ID = '469696203160-742nuvvdc2gf741o72bftrcj01uebj31.apps.googleusercontent.com';
     //Authorization(from https://developers.google.com/youtube/v3/docs/channels/list?apix=true)
-    {
+    {        
         const buttonAuth = document.querySelector('#authorize');
         const authBlock = document.querySelector('.auth');
         //Showing error and closing pop-up
@@ -14,7 +15,7 @@ export default function ytAPI() {
             gapi.auth2.init({
                 client_id: CLIENT_ID
             });
-        }); 
+        });
 
         const authenticate = () => {
             return gapi.auth2.getAuthInstance()
@@ -108,7 +109,7 @@ export default function ytAPI() {
 
             const ytWrapper = document.querySelector('#yt-wrapper');
             ytWrapper.textContent = '';
-            data.forEach(item => {              
+            data.forEach(item => {
                 try {
                     const {
                         snippet: {
