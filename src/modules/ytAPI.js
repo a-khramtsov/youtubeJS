@@ -50,8 +50,8 @@ export default function ytAPI() {
     {
         const logo = document.querySelector('.main-logo');
         const trends = document.querySelector('#yt_trend');
-        const like = document.querySelector('#like');
-        const subscriptions = document.querySelector('#subscriptions');
+        const like = document.querySelector('#yt_like');
+        const subscriptions = document.querySelector('#yt_subscriptions');
         const searchForm = document.querySelector('.search-form');
 
         function request(options) {
@@ -62,6 +62,7 @@ export default function ytAPI() {
                 .catch(err => console.log('Error: ' + err));
         }
 
+         //Printing all videos at the page
         function render(data) {
             console.log(data);
 
@@ -87,6 +88,7 @@ export default function ytAPI() {
                             }
                         }
                     } = item;
+                    //Making innerHTML with appropriate values
                     ytWrapper.innerHTML += `
                         <div class="yt" data-youtuber="${likedVideoId || videoId || id}">
                             <div class="yt-thumbnail" style="--aspect-ratio:16/9;">
@@ -104,6 +106,7 @@ export default function ytAPI() {
             youtuber();
         }
 
+        //Printing all subs at the page
         function renderSub(data) {
             console.log(data);
 
@@ -138,6 +141,8 @@ export default function ytAPI() {
                     console.error('Error: ' + err);
                 }
             });
+
+           //Opening video
             ytWrapper.querySelectorAll('.yt').forEach(item => {
                 item.addEventListener('click', () => {
                     request({
