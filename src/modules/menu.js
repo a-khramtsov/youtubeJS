@@ -14,9 +14,7 @@ export default function menu(){
         let target = event.target.closest('li');
 
         if (target) {
-            sideBarMenu.querySelectorAll('li').forEach((elem) => {
-                console.log(target);
-                console.log(elem);
+            sideBarMenu.querySelectorAll('li').forEach((elem) => {                
                 if (target === elem) {
                     elem.classList.add('active')
                 } else {

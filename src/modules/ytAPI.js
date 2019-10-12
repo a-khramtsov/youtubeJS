@@ -3,7 +3,7 @@ export default function ytAPI() {
     const API_KEY = 'AIzaSyDtd0XrsYM4si_Hcy7mU1tHg5fjimCab-E';
     const CLIENT_ID = '469696203160-742nuvvdc2gf741o72bftrcj01uebj31.apps.googleusercontent.com';
     //Authorization(from https://developers.google.com/youtube/v3/docs/channels/list?apix=true)
-    {        
+    {
         const buttonAuth = document.querySelector('#authorize');
         const authBlock = document.querySelector('.auth');
         //Showing error and closing pop-up
@@ -48,7 +48,9 @@ export default function ytAPI() {
 
     //request
     {
-        const logo = document.querySelector('.main-logo');
+        const logo = document.querySelector('.logo');
+        const channelLogo = document.querySelector('.main-logo');
+        const main = document.querySelector('#yt_main');
         const trends = document.querySelector('#yt_trend');
         const like = document.querySelector('#yt_like');
         const subscriptions = document.querySelector('#yt_subscriptions');
@@ -62,7 +64,7 @@ export default function ytAPI() {
                 .catch(err => console.log('Error: ' + err));
         }
 
-         //Printing all videos at the page
+        //Printing all videos at the page
         function render(data) {
             console.log(data);
 
@@ -142,7 +144,7 @@ export default function ytAPI() {
                 }
             });
 
-           //Opening video
+            //Opening video
             ytWrapper.querySelectorAll('.yt').forEach(item => {
                 item.addEventListener('click', () => {
                     request({
@@ -157,8 +159,34 @@ export default function ytAPI() {
 
         };
 
-        //Showing chosen channel videos
-        logo.addEventListener('click', () => {
+        //Function for showing chosen channel(my) videos official YT -UCBR8-60-B28hp2BmDPdntcQ
+        function myPage() {            
+            request({
+                method: 'search',
+                part: 'snippet',
+                channelId: 'UCBR8-60-B28hp2BmDPdntcQ',
+                order: 'date',
+                maxResults: 24,
+            });
+            
+            if (this.className == 'logo') {
+                //Adding to main "active" and removing "active" at another variants
+                const sideBarMenu = document.querySelectorAll('.sidebarMenu li');
+                sideBarMenu[0].classList.add('active');
+                sideBarMenu[1].classList.remove('active');
+                sideBarMenu[2].classList.remove('active');
+                sideBarMenu[3].classList.remove('active');
+            }
+        }
+
+        
+        //Youtube music chnnel  when you press main or yt-logo
+        main.addEventListener('click', myPage);
+        logo.addEventListener('click', myPage);
+
+
+        //Opening chosen yt channel UC0C-w0YjGpqDXGB8IHb662A - Ed Sheran
+        channelLogo.addEventListener('click', () => {
             request({
                 method: 'search',
                 part: 'snippet',
@@ -167,7 +195,6 @@ export default function ytAPI() {
                 maxResults: 24,
             });
         });
-
 
         //Showing trends
         trends.addEventListener('click', () => {
