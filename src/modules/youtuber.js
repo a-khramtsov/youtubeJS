@@ -3,14 +3,17 @@ export default function youtuber() {
     const youTuberModal = document.querySelector('.youTuberModal');
     const youtuberContainer = document.querySelector('#youtuberContainer');
 
-
+    //Possible sizes of userScreen
     const qualityWidth = [3840, 2560, 1920, 1290, 854, 640, 426, 256];
     const qualityHight = [2160, 1440, 1080, 720, 480, 360, 240, 144];
 
     const sizeVideo = () => {
+        //Getting userScreen size
         let windowWidth = document.documentElement.clientWidth;
         let windowHight = document.documentElement.clientHeight;
 
+        //Сompare of all possible sizes and making appropriate iframe and youtubeContainer width/height. 
+        //Also making youtuberContainer location
         for (let i = 0; i < qualityWidth.length; i++) {
             if (windowWidth > qualityWidth[i]) {
                 youtuberContainer.querySelector('iframe').style.cssText = `
@@ -29,6 +32,7 @@ export default function youtuber() {
         }
     };
 
+    //Opening selected video
     youtuberItems.forEach(elem => {
         elem.addEventListener('click', () => {
             const idVideo = elem.dataset.youtuber;
@@ -44,7 +48,7 @@ export default function youtuber() {
         });
     });
 
-
+    //Clickng not on video = closing modal window with video
     youTuberModal.addEventListener('click', () => {
         youTuberModal.style.display = '';
         youtuberContainer.textContent = '';

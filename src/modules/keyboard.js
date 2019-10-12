@@ -4,6 +4,7 @@ export default function keyboard(){
     const closeKeyboard = document.querySelector('#close-keyboard');
     const searchInput = document.querySelector('.search-form__input');
 
+    //Showing/hiding keyboard
     const toggleKeyboard = () => {
         keyboard.style.top = keyboard.style.top ? '' : '50%'; //Showing keyboard
     };
@@ -23,6 +24,7 @@ export default function keyboard(){
             'ru', ' '
         ];
 
+        //Getting key of language change. If change language key = en, then all keys swaping to EN. Else - to RU
         if (lang === 'en') {
             btn.forEach((elem, i) => {
                 elem.textContent = langEn[i];
@@ -33,6 +35,8 @@ export default function keyboard(){
             })
         }
     };
+
+    //Press on any key
     const typing = (event) => {
         const target = event.target;
 

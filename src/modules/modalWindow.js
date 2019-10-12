@@ -1,4 +1,3 @@
-
 import youtuber from '../modules/youtuber';
 export default function modalWindow(){
     document.body.insertAdjacentHTML('beforeend', `
