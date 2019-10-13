@@ -10,6 +10,7 @@ But, in project were a lot of little issues that I fixed. Unfortunately, i didn'
 
 # How to be authorized?
 To be authorized you need to use your Youtube account. When you press "Log in", auth form will be opened. There is no reason to worry about your account, because this website using Youtube API.
+# Result
 As a result, I got a good experience with bash, NPM connection and webpack initial stage
 # Technologies used
 - HTML
