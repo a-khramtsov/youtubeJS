@@ -4,7 +4,7 @@ https://dubsta-bubsta.github.io/youtubeJS/
 Created in October 2019
 
 # About
-Like the last project, this one was made on video from YouTube channel Glo academy. Layout and styles I also took from the author. The JS code was implemented by the author and I repeated and understood it. The main reason I started doing this project is using API, specifically Youtube API.  
+Like the last project, this one was made on video from YouTube channel Glo academy. Layout and styles I also took from the author. The JS code was implemented by the author and I repeated and understood it. The main reason I started doing this project is using hard API, specifically Youtube API.  
 I created API Key Clinet ID. Connected API to my project and started working with it. (Video author shown this).  
 But, in project were a lot of little issues that I fixed. Unfortunately, i didn't fix main problem - another people, who trying open my website can't open their likes and subscriptions.
 # Result
