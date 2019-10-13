@@ -14,8 +14,6 @@ To be authorized you need to use your Youtube account. When you press "Log in", 
 # Technologies used
 - HTML
 - CSS
-- Flex
-- Grid
-- Media queries
+- JavaScript
 - Webpack
 - Youtube API
